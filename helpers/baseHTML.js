@@ -1,6 +1,6 @@
 
 
-const baseHTML = `!DOCTYPE html>
+const baseHTML = `<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,20 +9,21 @@ const baseHTML = `!DOCTYPE html>
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-    <header>
-    <header>
+  <header>
       <nav>
         <ul id="listado">
-            <li>< id="productos"><a href="">Productos</a></></li>
-            <li>< id="camisetas"><a href="">Camisetas</a></></li>
-            <li>< id="pantalones"><a href="">Pantalones</a></></li>
-            <li>< id="zapatos"><a href="">Zapatos</a></></li>
-            <li>< id="accesorios"><a href="">Accesorios</a></></li>
-            <li>< id="login"><a>Login</a href=""></></li>
+            <li><a id="productos" href="">Productos</a></li>
+            <li><a id="camisetas" href="">Camisetas</a></li>
+            <li><a id="pantalones" href="">Pantalones</a></li>
+            <li><a id="zapatos" href="">Zapatos</a></li>
+            <li><a id="accesorios" href="">Accesorios</a></li>
+            <li><a id="login" href="">Login</a></li>
         </ul>
       </nav>
     </header>
 </body>
 </html>`
+
+
 
 module.exports = baseHTML

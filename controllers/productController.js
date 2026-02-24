@@ -1,5 +1,6 @@
 const Product = require ('../models/product.js')
 const {getProductCards} = require ('../helpers/template.js')
+const baseHTML = require ('../helpers/baseHTML.js')
 
 const productController = {
     showProducts: async (req,res)=>{
@@ -13,8 +14,13 @@ const productController = {
     },
     showProductById: async (req,res)=>{
         try {
+            let url = req.originalUrl
+            if (url.includes('/dashboard')) {
+                res.render('dashboard', { baseHTML })
+            }else{
             const productoBuscado = await Product.findById(req.params.productid)
-            res.json(productoBuscado)   
+            res.json(productoBuscado)
+            }
         } catch (error) {
             console.error (error)
             res.status (500).json ({message: "No se encuentran el producto"})
