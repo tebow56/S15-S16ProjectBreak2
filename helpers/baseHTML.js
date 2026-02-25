@@ -4,23 +4,14 @@ const baseHTML = `<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de ropa</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header>
-      <nav>
-        <ul id="listado">
-            <li><a id="productos" href="">Productos</a></li>
-            <li><a id="camisetas" href="">Camisetas</a></li>
-            <li><a id="pantalones" href="">Pantalones</a></li>
-            <li><a id="zapatos" href="">Zapatos</a></li>
-            <li><a id="accesorios" href="">Accesorios</a></li>
-            <li><a id="login" href="">Login</a></li>
-        </ul>
-      </nav>
-    </header>
+
+  <main>
+
+  </main>
 </body>
 </html>`
 

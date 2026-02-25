@@ -46,14 +46,59 @@ table {
 
 header {
     display:flex;
-    flex-direction:row;
-    justify-content:space-between;
     align-items:center;
     padding: 20px;
-    background-color: #600a0a;
+    background-color: rgba(128, 128, 128, 0.505);
+	justify-content: center;
+	
+}
+header ul {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	text-decoration: none;
+
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #6b1f1f;
+    background-color: #f8f8f8;
+}
+main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px;
+}
+.product-card {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	padding: 20px;
+	margin: 10px;
+	width: 200px;
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 300px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#formularioEliminarProducto {
+	width: 150px;
+	margin: 20px auto;
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
