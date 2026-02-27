@@ -7,7 +7,7 @@ const productController = require ('../controllers/productController.js')
 
 router.get ('/', productController.showProducts)
 
-router.get ('/:productid', productController.showProductById)
+router.get ('/producto/:productid', productController.showProductById)
 
 router.get ('/categoria/:categoria', productController.showProductsByCategory)
 
