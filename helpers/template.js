@@ -101,7 +101,7 @@ const formularioNuevoProducto = `
   }
 
   const formularioLogin = `
-  <form action="/login" method="POST" id="formularioLogin">
+  <form action="/auth/login" method="POST" id="formularioLogin">
     <label for="usuario">Usuario:</label>
     <input type="text" id="usuario" name="usuario" required>
     <label for="contraseña">Contraseña:</label>

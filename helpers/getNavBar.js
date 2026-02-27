@@ -21,7 +21,7 @@ const getNavBar = (url) => {
             <li><a id="pantalones" href="/categoria/pantalones">Pantalones</a></li>
             <li><a id="zapatos" href="/categoria/zapatos">Zapatos</a></li>
             <li><a id="accesorios" href="/categoria/accesorios">Accesorios</a></li>
-            <li><a id="login" href="/login">Login</a></li>
+            <li><a id="login" href="/auth/login">Login</a></li>
         </ul>
       </nav>
   </header>`
