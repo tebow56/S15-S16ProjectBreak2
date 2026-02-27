@@ -16,11 +16,11 @@ const getNavBar = (url) => {
     } else  { return `<header>
       <nav>
         <ul id="listado">
-            <li><a id="productos" href="/products">Productos</a></li>
-            <li><a id="camisetas" href="/products/categoria/camisetas">Camisetas</a></li>
-            <li><a id="pantalones" href="/products/categoria/pantalones">Pantalones</a></li>
-            <li><a id="zapatos" href="/products/categoria/zapatos">Zapatos</a></li>
-            <li><a id="accesorios" href="/products/categoria/accesorios">Accesorios</a></li>
+            <li><a id="productos" href="/">Productos</a></li>
+            <li><a id="camisetas" href="/categoria/camisetas">Camisetas</a></li>
+            <li><a id="pantalones" href="/categoria/pantalones">Pantalones</a></li>
+            <li><a id="zapatos" href="/categoria/zapatos">Zapatos</a></li>
+            <li><a id="accesorios" href="/categoria/accesorios">Accesorios</a></li>
             <li><a id="login" href="/login">Login</a></li>
         </ul>
       </nav>
