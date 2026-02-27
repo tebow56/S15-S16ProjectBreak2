@@ -32,7 +32,7 @@ function getProductCards(products, url) {
           <p>${product.descripcion}</p>
           <p>${product.talla}</p>
           <p>${product.precio}€</p>
-          <a href="/products/${product._id}">Ver detalle</a>
+          <a href="/${product._id}">Ver detalle</a>
         </div>
       `;
     }
