@@ -13,7 +13,7 @@ app.use(express.static('public'))
 app.use(express.json());
 
 
-app.use('/', router)
+app.use('/products', router)
 app.use('/API', apiRouter)
 app.use ('/', authRouter)
 dbConnection()

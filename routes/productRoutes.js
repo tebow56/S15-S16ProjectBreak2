@@ -5,11 +5,11 @@ const productController = require ('../controllers/productController.js')
 
 
 
-router.get ('/products', productController.showProducts)
+router.get ('/', productController.showProducts)
 
-router.get ('/products/:productid', productController.showProductById)
+router.get ('/:productid', productController.showProductById)
 
-router.get ('/products/categoria/:categoria', productController.showProductsByCategory)
+router.get ('/categoria/:categoria', productController.showProductsByCategory)
 
 router.get ('/dashboard/categoria/:categoria', productController.showProductsByCategory)
 
