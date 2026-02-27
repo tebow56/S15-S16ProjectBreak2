@@ -13,9 +13,9 @@ app.use(express.static('public'))
 app.use(express.json());
 
 
-app.use('/products', router)
+app.use('/', router)
 app.use('/API', apiRouter)
-app.use ('/', authRouter)
+app.use ('/auth', authRouter)
 dbConnection()
 
 
