@@ -27,11 +27,11 @@ function getProductCards(products, url) {
       html += `
       
         <div class="product-card">
-          <img src="/producto/${product.imagen}" alt="${product.nombre}">
-          <h2>/producto/${product.nombre}</h2>
-          <p>/producto/${product.descripcion}</p>
-          <p>/producto/${product.talla}</p>
-          <p>/producto/${product.precio}€</p>
+          <img src="${product.imagen}" alt="${product.nombre}">
+          <h2>${product.nombre}</h2>
+          <p>${product.descripcion}</p>
+          <p>${product.talla}</p>
+          <p>${product.precio}€</p>
           <a href="/producto/${product._id}">Ver detalle</a>
         </div>
       `;
