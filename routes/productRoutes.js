@@ -1,6 +1,5 @@
 const express =  require ('express')
-const router = express.Router()
-const upload = require('../middlewares/uploadCloudinaryMiddleware.js');
+const router = express.Router();
 const Product = require ('../models/product.js')
 const productController = require ('../controllers/productController.js')
 
@@ -9,6 +8,10 @@ const productController = require ('../controllers/productController.js')
 router.get ('/products', productController.showProducts)
 
 router.get ('/products/:productid', productController.showProductById)
+
+router.get ('/products/categoria/:categoria', productController.showProductsByCategory)
+
+router.get ('/dashboard/categoria/:categoria', productController.showProductsByCategory)
 
 router.get ('/dashboard',productController.showProducts)
 
@@ -22,6 +25,6 @@ router.get ('/dashboard/:productid/edit', productController.showEditProduct)
 
 router.put ('/dashboard/:productid', productController.updateProduct)
 
-router.delete ('/dashboard/:productid/delete', productController.deleteProduct)
+router.delete ('/dashboard/:productid', productController.deleteProduct)
 
 module.exports = router

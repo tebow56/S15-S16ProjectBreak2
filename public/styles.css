@@ -2,7 +2,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -79,10 +79,30 @@ main {
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	padding: 20px;
 	margin: 10px;
-	width: 200px;
+	width: 250px;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
 	text-align: center;
-}
+	gap: 5px;
 
+}
+.product-card a {
+	text-decoration: none;
+	color: #3150b4;
+	font-weight: bold ;
+	font-style: italic;
+	font-size: 14px;
+	margin-top: 10px;
+
+}
+.product-card img {
+	text-align: center;
+	align-self: center;
+	width: 200px;
+	height: 250px;
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
 form {
 	display: flex;
 	flex-direction: column;
@@ -101,4 +121,14 @@ form {
 	padding: 10px;
 	border-radius: 8px;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#botonEliminarProducto {
+	background-color: #ff4d4dce;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: bold;
 }

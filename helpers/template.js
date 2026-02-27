@@ -10,12 +10,12 @@ function getProductCards(products, url) {
           <img src="${product.imagen}" alt="${product.nombre}">
           <h2>${product.nombre}</h2>
           <p>${product.descripcion}</p>
-          <p>${product.talla}</p>
-          <p>${product.precio}€</p>
+          <p><strong>Talla:</strong> ${product.talla}</p>
+          <p><strong>Precio:</strong> ${product.precio}€</p>
           <a href="/dashboard/${product._id}">Ver detalle</a>
           <a href="/dashboard/${product._id}/edit">Editar</a>
-          <form action="/dashboard/${product._id}?_method=DELETE/delete" method="POST"  enctype="application/x-www-form-urlencoded" id="formularioEliminarProducto">
-          <button type="submit">Eliminar Producto</button>
+          <form action="/dashboard/${product._id}?_method=DELETE" method="POST"  enctype="application/x-www-form-urlencoded" id="formularioEliminarProducto">
+          <button type="submit" id="botonEliminarProducto">Eliminar Producto</button>
           </form>
         </div>
       `;
@@ -96,7 +96,7 @@ const formularioNuevoProducto = `
     <input type="number" step="0.01" id="precio" name="precio" required>
     <label for="imagen">Imagen:</label>
     <input type="text" id="imagen" name="imagen">
-    <button type="submit">Crear Producto</button>
+    <button type="submit">Editar Producto</button>
   </form>`
   }
   

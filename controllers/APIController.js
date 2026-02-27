@@ -1,5 +1,5 @@
-const Product = require ('../models/product.js')
-const {getProductCards} = require ('../helpers/template.js')
+const {Product} = require ('../models/product.js')
+
 
 
 
@@ -70,3 +70,5 @@ const productController = {
         }
     },
 }
+
+module.exports = productController

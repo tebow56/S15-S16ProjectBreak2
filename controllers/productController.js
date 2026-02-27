@@ -37,6 +37,18 @@ const productController = {
             res.status (500).json ({message: "No se encuentran el producto"})
         }
     },
+    showProductsByCategory: async (req,res)=>{
+        try {
+            const filtrados= await Product.find({"categoria": `${req.params.categoria}`})
+            const cards = getProductCards(filtrados,req.originalUrl)
+            const NavBar = getNavBar(req.originalUrl)
+            const html = baseHTML + NavBar + `<main>${cards}</main>`
+            res.send(html)
+        } catch (error) {
+            console.error (error)
+            res.status (500).json ({message: "No se encuentran los productos"})
+        }
+    },
     showNewProduct: async (req,res)=>{
         try {
             const NavBar = getNavBar(req.originalUrl)
