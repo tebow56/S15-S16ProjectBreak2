@@ -99,6 +99,14 @@ const formularioNuevoProducto = `
     <button type="submit">Editar Producto</button>
   </form>`
   }
-  
- 
-module.exports = {getProductCards, formularioNuevoProducto, formularioEditar}
+
+  const formularioLogin = `
+  <form action="/login" method="POST" id="formularioLogin">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" name="contraseña" required>
+    <button type="submit">Iniciar Sesión</button>
+  </form>`
+
+module.exports = {getProductCards, formularioNuevoProducto, formularioEditar, formularioLogin}
