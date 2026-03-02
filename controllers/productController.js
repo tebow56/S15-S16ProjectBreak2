@@ -2,6 +2,7 @@ const {Product, categoryOptions, sizeOptions} = require ('../models/product.js')
 const {getProductCards, formularioNuevoProducto, formularioEditar} = require ('../helpers/template.js')
 const baseHTML = require ('../helpers/baseHTML.js')
 const getNavBar = require ('../helpers/getNavBar.js')
+const {mensajeError} = require ("../helpers/template")
 
 
 const productController = {
@@ -15,7 +16,7 @@ const productController = {
 
         } catch (error){
             console.error (error)
-            res.status (500).json ({message: "No se encuentran los productos"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se encuentran los productos")}</main>`)
         }
     },
     showProductById: async (req,res)=>{
@@ -34,7 +35,7 @@ const productController = {
             }
         } catch (error) {
             console.error (error)
-            res.status (500).json ({message: "No se encuentran el producto"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se encuentra el producto")}</main>`)
         }
     },
     showProductsByCategory: async (req,res)=>{
@@ -46,7 +47,7 @@ const productController = {
             res.send(html)
         } catch (error) {
             console.error (error)
-            res.status (500).json ({message: "No se encuentran los productos"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se encuentran los productos de esa categoría")}</main>`)
         }
     },
     showNewProduct: async (req,res)=>{
@@ -56,7 +57,7 @@ const productController = {
             res.send(html)
         } catch (error){
             console.error (error)
-            res.status (500).json ({message: "No se encuentran los productos"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se ha podido mostrar el formulario de nuevo producto")}</main>`)
         }
     },
     createProducts: async (req,res)=> {
@@ -68,7 +69,7 @@ const productController = {
             res.redirect(`/dashboard/${ultimoProducto._id}`)
         } catch (error){
             console.error (error)
-            res.status (500).json ({message: "No se ha podido crear el producto"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se ha podido crear el producto")}</main>`)
         }
     },    
     showEditProduct: async (req,res)=>{
@@ -79,7 +80,7 @@ const productController = {
             res.send(html)
         } catch (error) {
             console.error (error)
-            res.status (500).json ({message: "No se encuentra el producto"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se ha podido mostrar el formulario de edición")}</main>`)
         }
     },  
     updateProduct: async (req,res)=>{
@@ -92,7 +93,7 @@ const productController = {
             res.redirect(`/dashboard/${productoBuscado._id}`) 
         }} catch (error) {
             console.error (error)
-            res.status (500).json ({message: "No se pudo actualizar el producto"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se pudo actualizar el producto")}</main>`)
         }
     }, 
     deleteProduct: async (req,res)=>{
@@ -106,7 +107,7 @@ const productController = {
             }
         }catch (error) {
             console.error (error)
-            res.status (500).json ({message: "No se pudo eliminar el producto"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se pudo eliminar el producto")}</main>`)
         }
     },
 }

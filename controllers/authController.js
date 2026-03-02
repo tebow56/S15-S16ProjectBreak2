@@ -20,7 +20,7 @@ const userController = {
             }
         } catch (error) {
             console.error (error)
-            res.status (500).json ({message: "Error al iniciar sesión"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Error al iniciar sesión")}</main>`)
         }
     }, 
     showLoginForm: (req,res)=>{

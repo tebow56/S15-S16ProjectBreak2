@@ -109,4 +109,10 @@ const formularioNuevoProducto = `
     <button type="submit">Iniciar Sesión</button>
   </form>`
 
-module.exports = {getProductCards, formularioNuevoProducto, formularioEditar, formularioLogin}
+  const mensajeError = (mensaje) => {
+    return `<div id="mensajeError"> <p class="mensaje-error">${mensaje}</p>
+    <button onclick="window.location.href = '/'">Volver al menú principal</button>
+    </div>`
+  }
+
+module.exports = {getProductCards, formularioNuevoProducto, formularioEditar, formularioLogin, mensajeError}

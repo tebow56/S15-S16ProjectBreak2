@@ -1,10 +1,14 @@
+const baseHTML = require ('../helpers/baseHTML.js')
+const getNavBar = require ('../helpers/getNavBar.js')
+const {mensajeError} = require ("../helpers/template")
+
 const loginMiddleware = (req, res, next) => {
-    if (!req.body.email || !req.body.contraseña) {
-      return res.status(400).json({ message: "Email y contraseña son requeridos" });
-    } 
+    if (!req.session.user || !req.session.isAuthenticated) {
+      return res.status(400).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Acceso no autorizado. Por favor, inicia sesión.")}</main>`)
+    }
     next();
   };
 
 
 
-module.exports = loginMiddleware;
+module.exports = {loginMiddleware};
