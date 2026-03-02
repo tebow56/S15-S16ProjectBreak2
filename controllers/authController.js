@@ -9,9 +9,9 @@ const userController = {
             const {usuario, contraseña} = req.body
             const user = await User.findOne({usuario: usuario})
             if (!user) {
-                res.status(404).json({message: "Usuario no encontrado"})
+                res.status(404).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Usuario no encontrado")}</main>`)
             } else if (user.password !== contraseña) {
-                res.status(401).json({message: "Contraseña incorrecta"})
+                res.status(401).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Contraseña incorrecta")}</main>`)
             } else {
                 req.session.user = user
                 req.session.isAuthenticated = true
@@ -29,7 +29,7 @@ const userController = {
             res.send(html)
         } catch (error) {
             console.error (error)
-            res.status (500).send ({message: "Error al mostrar el formulario de inicio de sesión"})
+            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("No se ha podido mostrar el formulario de login")}</main>`)
         }
     },
     registerUser: async (req,res)=>{
