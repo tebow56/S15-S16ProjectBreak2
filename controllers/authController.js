@@ -2,6 +2,7 @@ const {User} = require ('../models/user.js')
 const {formularioLogin} = require ('../helpers/template.js')
 const baseHTML = require ('../helpers/baseHTML.js')
 const getNavBar = require ('../helpers/getNavBar.js')
+const {mensajeError} = require ("../helpers/template")
 
 const userController = {
     loginUser: async (req,res)=>{
@@ -9,9 +10,9 @@ const userController = {
             const {usuario, contraseña} = req.body
             const user = await User.findOne({usuario: usuario})
             if (!user) {
-                res.status(404).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Usuario no encontrado")}</main>`)
+                res.status(404).send (baseHTML + `<main>${mensajeError("Usuario no encontrado")}</main>`)
             } else if (user.password !== contraseña) {
-                res.status(401).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Contraseña incorrecta")}</main>`)
+                res.status(401).send (baseHTML + `<main>${mensajeError("Contraseña incorrecta")}</main>`)
             } else {
                 req.session.user = user
                 req.session.isAuthenticated = true
@@ -20,7 +21,7 @@ const userController = {
             }
         } catch (error) {
             console.error (error)
-            res.status (500).send (baseHTML + getNavBar(req.originalUrl) + `<main>${mensajeError("Error al iniciar sesión")}</main>`)
+            res.status (500).send (baseHTML + `<main>${mensajeError("Error al iniciar sesión")}</main>`)
         }
     }, 
     showLoginForm: (req,res)=>{
